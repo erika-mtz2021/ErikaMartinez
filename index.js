@@ -1,3 +1,35 @@
+ //Importamos la galeria express
+ var express = require('express');
+ var app = express();
+ 
+ app.use(express.json())
+ 
+ app.get('/', function (req, res) {
+   res.send('Hello World!');
+ });
+ 
+ //app.listen(3000, function () {
+   //console.log('Example app listening on port 3000!');
+ //});
+ 
+ app.post("/students", (req,res) =>{
+ //Request -> Peticion = { }
+ // Response -> Respuesta = { }
+ //formas de recibir informacion
+ //1.Query
+ //2.Params
+ //3.Body
+   var date = req.body.date;
+   var code = req.body.code;
+ 
+   res.send({
+     message: "Hola soy Michelle, tu codigo es:" +code+ "fecha es:" + date,
+   });
+ });
+ //app.use(express.urlencoded({ extended:false})
+ app.listen(3000, function () {
+   console.log('Example app listening on port 3000!');
+ });
 //Importamos la libreria express
 var express = require("express");
 var app = express();
